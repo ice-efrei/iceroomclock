@@ -23,7 +23,7 @@ export default function Home() {
     if (entity_id === "sensor.time") {
       setTime(state);
     }
-    if (entity_id === "input_text.test_temp") {
+    if (entity_id === "sensor.esphome_web_4dced0_kobra_2_neo_room_temperature") {
       setTemperature(state + unit)
     }
     if (entity_id === "input_text.announcement" && state !== "" && state !== announcement) {
@@ -47,7 +47,7 @@ export default function Home() {
         if (HA?.areEntitiesLoaded) {
           console.log("time id updated");
             setTime(HA?.get_entity_by_id("sensor.time")?.state || "");
-            setTemperature((HA?.get_entity_by_id("input_text.test_temp")?.state || "") + (HA?.get_entity_by_id("input_text.test_temp")?.unit || ""));
+            setTemperature((HA?.get_entity_by_id("sensor.esphome_web_4dced0_kobra_2_neo_room_temperature")?.state || "") + (HA?.get_entity_by_id("sensor.esphome_web_4dced0_kobra_2_neo_room_temperature")?.unit || ""));
             HA.addMessageHandler(handleTimeChange);
             return;
         }
